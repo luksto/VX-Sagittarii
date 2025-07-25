@@ -1,0 +1,3 @@
+[submodule "jschuh/klipper-macros"]
+	path = jschuh/klipper-macros
+	url = https://github.com/jschuh/klipper-macros.git
