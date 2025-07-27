@@ -8,3 +8,4 @@ misc/
 moonraker.asvc
 systemd/
 .git-defect/
+.vscode/settings.json
