@@ -11,4 +11,4 @@ systemd/
 .vscode/settings.json
 config/config_backups/printer-20*.cfg
 gcodes/
-
+**.zip
