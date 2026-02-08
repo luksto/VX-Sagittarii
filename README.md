@@ -59,18 +59,65 @@ Runout Sensor geht los:
 1. mainsail:SET_PAUSE_NEXT_LAYER triggerd
 1. mainsail:SET_PAUSE_AT_LAYER triggerd
 
-## Pressing Pause manual...
+
+### manualing resumin in Idle-state: I changed the _idle_state to True!
+action:resumed
+mainsail@_CLIENT_EXTRUDE triggerd
+Enter _pre_resume and: Received last extruder temp: 100.0°C
+idle_timeout: Timeout set to 1800.00 s
+Restoring "extruder" temperature to 100.0°C, this may take some time
+mainsail@RESUME: my printer toolhead extruder is: extruder
+mainsail@RESUME: last_extruder_temp: {'restore': True, 'temp': 100.0}
+mainsail@RESUME: do I restore last temp?: True
+mainsail@RESUME: my idle state is: True
+mainsail@RESUME: printer idle_timeout state: READY
+mainsail@RESUME: resume triggerd
+RESUME
+
+mainsail@_CLIENT_EXTRUDE triggerd
+mainsail@_CLIENT_RETRACT triggerd
+mainsail@_TOOLHEAD_PARK_PAUSE_CANCEL triggerd
+action:paused
+idle_timeout: Timeout set to 600.00 s
+mainsail@PAUSE: set restore values to: {'restore': True, 'temp': 100.0}
+mainsail@PAUSE: pause triggerd
+PAUSE
+
+### next real printing test:
+Klipper state: Disconnect
+FIRMWARE_RESTART
 
 Klipper state: Shutdown
-mainsail:_CLIENT_EXTRUDE triggerd
-Enter _pre_resume and: Received last extruder temp: 0.0°C
-idle_timeout: Timeout set to 1800.00 s
-mainsail:RESUME: resume triggerd
-mainsail:_CLIENT_EXTRUDE triggerd
-mainsail:_CLIENT_RETRACT triggerd
-mainsail:_TOOLHEAD_PARK_PAUSE_CANCEL triggerd
-idle_timeout: Timeout set to 1800.00 s
-mainsail@PAUSE: set restore values to: {'restore': True, 'temp': 0.0}
-mainsail:PAUSE: pause triggerd
-mainsail:_CLIENT_EXTRUDE triggerd
+Load new filament! Wait until is loaded, then resume printing.
+Unloading filament...
+O2SmSens: filament_change_state2 triggerd
+Filament runnout!
+O2SmSens: filament_change_state1 triggerd
+O2SmSens: runnout_init triggerd
+
+mainsail@_CLIENT_EXTRUDE triggerd
+mainsail@_CLIENT_RETRACT triggerd
+mainsail@_TOOLHEAD_PARK_PAUSE_CANCEL triggerd
+idle_timeout: Timeout set to 600.00 s
+mainsail@PAUSE: set restore values to: {'restore': True, 'temp': 220.0}
+mainsail@PAUSE: pause triggerd
+mainsail@_CLIENT_EXTRUDE triggerd
 Enter _pre_resume and: Received last extruder temp: 220.0°C
+
+idle_timeout: Timeout set to 1800.00 s
+mainsail@RESUME: my printer toolhead extruder is: extruder
+mainsail@RESUME: last_extruder_temp: {'restore': True, 'temp': 220.0}
+mainsail@RESUME: do I restore last temp?: True
+mainsail@RESUME: my idle state is: False
+mainsail@RESUME: printer idle_timeout state: READY
+mainsail@RESUME: resume triggerd
+
+mainsail@_CLIENT_EXTRUDE triggerd
+mainsail@_CLIENT_RETRACT triggerd
+mainsail@_TOOLHEAD_PARK_PAUSE_CANCEL triggerd
+idle_timeout: Timeout set to 600.00 s
+mainsail@PAUSE: set restore values to: {'restore': True, 'temp': 220.0}
+mainsail@PAUSE: pause triggerd
+
+pressure_advance: 0.020000
+pressure_advance_smooth_time: 0.040000
